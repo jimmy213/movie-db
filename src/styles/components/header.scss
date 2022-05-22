@@ -1,0 +1,45 @@
+.header {
+  background-color: $light-blue;
+  color: $dark-blue;
+
+  .navbar {
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+
+    @include break(tablet) {
+      padding: 20px 60px;
+      flex-direction: unset;
+    }
+
+    .logo-wrapper {
+      @include font("heading-big");
+      -webkit-user-select: none;
+      user-select: none;
+    }
+
+    .menu-items {
+      @include font("heading-regular");
+      font-weight: 400;
+      display: flex;
+      gap: 40px;
+
+      .menu-item {
+        .inactive {
+          &:hover,
+          &:active {
+            color: $light-green;
+          }
+        }
+
+        .active {
+          color: $light-green;
+          pointer-events: none;
+        }
+      }
+    }
+  }
+}
