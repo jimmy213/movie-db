@@ -1,3 +1,4 @@
+import { MovieSearch } from "../../components/MovieSearch";
 import { useFetch } from "../../utils/useFetch";
 
 const API_KEY = process.env.REACT_APP_TMDB_API_KEY;
@@ -10,6 +11,8 @@ export const Home = () => {
   return (
     <main className="homepage">
       <div className="homepage-wrapper container">
+        <MovieSearch />
+
         <div className="main-content">
           <section className="top-movies">
             <h3 className="list-title">Top 10 Movies</h3>
