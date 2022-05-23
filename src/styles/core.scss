@@ -6,9 +6,20 @@ body {
   -moz-osx-font-smoothing: grayscale;
 
   background-color: $body-background;
+  color: $dark-blue;
 }
 
 .container {
   margin: 0 auto;
   max-width: 1280px;
+}
+
+.fetch-status {
+  display: block;
+  margin-top: 20px;
+
+  &-error {
+    @extend .fetch-status;
+    color: $error;
+  }
 }

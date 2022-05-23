@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import PageHeader from "./components/PageHeader";
+import { Home } from "./pages/home";
 
 export default function AppRoutes() {
   return (
@@ -7,7 +8,7 @@ export default function AppRoutes() {
       <PageHeader />
 
       <Routes>
-        <Route path="/" />
+        <Route path="/" element={<Home />} />
       </Routes>
     </Router>
   );
