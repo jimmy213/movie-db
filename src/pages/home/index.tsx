@@ -1,12 +1,15 @@
 import { MovieSearch } from "../../components/MovieSearch";
+import { TopMovies } from "../../components/TopMovies";
 import { useFetch } from "../../utils/useFetch";
 
 const API_KEY = process.env.REACT_APP_TMDB_API_KEY;
 
 export const Home = () => {
-  const { isPending, error } = useFetch(
-    `https://api.themoviedb.org/3/movie/top_rated?api_key=${API_KEY}`
-  );
+  const {
+    data: movieData,
+    isPending,
+    error
+  } = useFetch(`https://api.themoviedb.org/3/movie/top_rated?api_key=${API_KEY}`);
 
   return (
     <main className="homepage">
@@ -18,6 +21,7 @@ export const Home = () => {
             <h3 className="list-title">Top 10 Movies</h3>
             {error && <span className="fetch-status-error">{error}</span>}
             {isPending && <span className="fetch-status">Loading...</span>}
+            {movieData && <TopMovies movieData={movieData} />}
           </section>
 
           <section className="top-favorites">
