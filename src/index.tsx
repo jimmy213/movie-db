@@ -1,7 +1,7 @@
-import React from "react";
+import React, { useEffect } from "react";
 import ReactDOM from "react-dom/client";
 import { Helmet } from "react-helmet";
-import { Provider } from "react-redux";
+import { Provider, useSelector } from "react-redux";
 import AppRoutes from "./Routes";
 import store from "./store";
 
@@ -23,6 +23,13 @@ export default function ProviderApp() {
 }
 
 function App() {
+  const { isOpen } = useSelector((state: any) => state.modal);
+
+  useEffect(() => {
+    if (isOpen) document.body.style.overflow = "hidden";
+    else document.body.style.overflow = "unset";
+  }, [isOpen]);
+
   return (
     <>
       <Helmet>
