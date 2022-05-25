@@ -1,0 +1,44 @@
+.modal.movie-details {
+  .modal-content {
+    .modal-body {
+      @include break(tablet) {
+        display: flex;
+        gap: 40px;
+      }
+
+      &-image {
+        width: 180px;
+        border-radius: 12px;
+        align-self: flex-start;
+
+        @include break(desktop) {
+          width: 240px;
+        }
+      }
+
+      &-details {
+        margin-top: 20px;
+        max-width: 600px;
+
+        @include break(tablet) {
+          margin: 0;
+        }
+
+        .details-heading {
+          @include font("baseline");
+          display: block;
+          color: $light-blue;
+          font-weight: 700;
+
+          &:not(:first-of-type) {
+            margin-top: 20px;
+          }
+        }
+
+        a {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
