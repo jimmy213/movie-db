@@ -1,0 +1,47 @@
+.homepage {
+  &-wrapper {
+    padding: 60px 40px;
+
+    .main-content {
+      margin-top: 80px;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      column-gap: 100px;
+      row-gap: 40px;
+
+      .list-title {
+        @include font("heading-regular");
+      }
+
+      .top-list {
+        margin-top: 20px;
+
+        &-item {
+          margin-bottom: 16px;
+          max-width: 280px;
+
+          &:not(.empty) {
+            border-radius: 8px;
+            box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.1);
+            background-color: $white;
+            overflow: hidden;
+          }
+
+          .movie-link {
+            display: block;
+            padding: 10px 20px;
+            width: 100%;
+            cursor: pointer;
+            -webkit-transition: all 0.3s ease;
+            transition: all 0.3s ease;
+
+            &:hover {
+              background-color: $light-green;
+            }
+          }
+        }
+      }
+    }
+  }
+}
