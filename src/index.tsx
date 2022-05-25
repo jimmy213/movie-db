@@ -1,16 +1,26 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { Helmet } from "react-helmet";
+import { Provider } from "react-redux";
 import AppRoutes from "./Routes";
+import store from "./store";
 
 import "./styles/application.scss";
 
 const root = ReactDOM.createRoot(document.getElementById("root") as HTMLElement);
 root.render(
   <React.StrictMode>
-    <App />
+    <ProviderApp />
   </React.StrictMode>
 );
+
+export default function ProviderApp() {
+  return (
+    <Provider store={store}>
+      <App />
+    </Provider>
+  );
+}
 
 function App() {
   return (
