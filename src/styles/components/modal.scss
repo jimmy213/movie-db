@@ -1,0 +1,71 @@
+.modal {
+  position: fixed;
+  inset: 0;
+  background-color: rgba($dark-blue, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: $dark-blue;
+
+  &-content {
+    position: relative;
+    padding: 40px 24px;
+    width: 100%;
+    height: 100%;
+    background-color: $body-background;
+
+    @include break(desktop) {
+      padding: 34px 44px;
+      width: 90%;
+      height: max-content;
+      min-height: 500px;
+      border-radius: 4px;
+      box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    @include break(desktop) {
+      width: 80%;
+    }
+  }
+
+  &-close {
+    position: absolute;
+    display: block;
+    top: 4px;
+    right: 20px;
+    font-size: 38px;
+    transform: rotate(45deg);
+    cursor: pointer;
+    margin: 0 10px 0 auto;
+  }
+
+  &-header,
+  &-footer {
+    text-align: center;
+  }
+
+  &-header {
+    &-title {
+      @include font("heading-regular");
+    }
+  }
+
+  &-body {
+    margin-top: 20px;
+    height: 80%;
+    overflow: auto;
+
+    @include break(desktop) {
+      margin-top: 40px;
+      height: auto;
+    }
+  }
+
+  &-footer {
+    margin-top: 60px;
+
+    a {
+      color: $light-blue;
+    }
+  }
+}
