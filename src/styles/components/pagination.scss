@@ -1,0 +1,62 @@
+.pagination {
+  margin: 40px auto 0;
+  display: flex;
+  justify-content: center;
+  gap: 4px;
+
+  @include break(tablet) {
+    gap: 20px;
+  }
+
+  .page-item {
+    border-radius: 50%;
+    font-size: 11px;
+
+    @include break(tablet) {
+      font-size: 14px;
+    }
+
+    .page-link {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 28px;
+      height: 28px;
+
+      @include break(tablet) {
+        width: 40px;
+        height: 40px;
+      }
+    }
+
+    &:first-of-type {
+      font-size: 14px;
+      -webkit-transform: scale(-1, 1);
+      transform: scale(-1, 1);
+    }
+
+    &:last-of-type {
+      font-size: 14px;
+    }
+
+    @include break(tablet) {
+      &:first-of-type,
+      &:last-of-type {
+        font-size: 18px;
+      }
+    }
+
+    &:hover {
+      background-color: $light-green;
+    }
+
+    &.active {
+      font-weight: 700;
+      background-color: $light-blue;
+    }
+
+    &.disabled {
+      pointer-events: none;
+    }
+  }
+}
