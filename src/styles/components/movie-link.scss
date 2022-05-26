@@ -1,0 +1,43 @@
+.movie-link {
+  padding-right: 12px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+  min-height: 80px;
+  background-color: $white;
+  box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+
+  &:hover,
+  &:focus {
+    background-color: $light-green;
+  }
+
+  .movie-image {
+    width: 60px;
+    justify-self: flex-start;
+
+    &::before {
+      display: block;
+      overflow: hidden;
+    }
+  }
+
+  h3 {
+    @include font("baseline");
+
+    @include break(tablet) {
+      @include font("heading-regular");
+    }
+  }
+
+  span {
+    @include font("baseline");
+    display: block;
+  }
+}
