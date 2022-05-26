@@ -18,7 +18,7 @@ export const useFetch = (url: string) => {
       })
       .then((data) => {
         setIsPending(false);
-        setData(data.results || data);
+        setData(data);
         setError(null);
       })
       .catch((err) => {
