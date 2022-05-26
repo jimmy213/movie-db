@@ -1,0 +1,38 @@
+.moviespage {
+  .moviespage-wrapper {
+    padding: 20px 20px 80px;
+
+    @include break(tablet) {
+      padding: 60px 40px 80px;
+    }
+
+    .filter-wrapper {
+      .filter-title {
+        @include font("baseline");
+        font-weight: 700;
+      }
+
+      .filter-options {
+        margin-left: 10px;
+        padding: 4px;
+        border: 1px solid $body-background;
+        background-color: $white;
+        border-radius: 4px;
+        box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.1);
+        cursor: pointer;
+
+        &:hover {
+          border-color: $light-green;
+        }
+      }
+    }
+
+    .movie-search-results {
+      margin-top: 20px;
+
+      @include break(tablet) {
+        margin-top: 40px;
+      }
+    }
+  }
+}
