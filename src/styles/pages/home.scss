@@ -29,16 +29,8 @@
           }
 
           .movie-link {
-            display: block;
             padding: 10px 20px;
-            width: 100%;
-            cursor: pointer;
-            -webkit-transition: all 0.3s ease;
-            transition: all 0.3s ease;
-
-            &:hover {
-              background-color: $light-green;
-            }
+            min-height: auto;
           }
         }
       }

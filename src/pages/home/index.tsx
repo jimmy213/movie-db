@@ -21,7 +21,7 @@ export const Home = () => {
             <h3 className="list-title">Top 10 Movies</h3>
             {error && <span className="fetch-status-error">{error}</span>}
             {isPending && <span className="fetch-status">Loading...</span>}
-            {movieData && <TopMovies movieData={movieData} />}
+            {movieData && <TopMovies movieData={movieData.results} />}
           </section>
 
           <section className="top-favorites">
