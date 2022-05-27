@@ -36,10 +36,10 @@ export const MovieSearch = () => {
     <div className="movie-search">
       <SearchInput />
 
+      {query && isPending && <span className="fetch-status">Searching...</span>}
       {query && !isPending && !searchData?.length && (
         <span className="fetch-status-error">Movie not found</span>
       )}
-      {query && isPending && <span className="fetch-status">Searching...</span>}
       {!isPending && searchData && (
         <ul className={`movie-search-results ${!searchData?.length ? "results-empty" : ""}`}>
           {searchData?.map((movie: any) => (
