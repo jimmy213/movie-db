@@ -1,5 +1,26 @@
 .modal.movie-details {
   .modal-content {
+    .movie-fav {
+      &-true,
+      &-false {
+        position: absolute;
+        top: 8px;
+        left: 20px;
+        font-size: 34px;
+        cursor: pointer;
+      }
+
+      &-true {
+        color: $error;
+      }
+
+      &-false {
+        &:hover {
+          color: $error;
+        }
+      }
+    }
+
     .modal-body {
       @include break(tablet) {
         display: flex;
