@@ -19,18 +19,18 @@
 
         &-item {
           margin-bottom: 16px;
-          max-width: 280px;
+          max-width: 240px;
+
+          @include break(tablet) {
+            max-width: 100%;
+            width: 280px;
+          }
 
           &:not(.empty) {
             border-radius: 8px;
             box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.1);
             background-color: $white;
             overflow: hidden;
-          }
-
-          .movie-link {
-            padding: 10px 20px;
-            min-height: auto;
           }
         }
       }
