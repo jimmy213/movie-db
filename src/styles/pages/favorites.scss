@@ -1,0 +1,14 @@
+.favoritespage {
+  .favoritespage-wrapper {
+    padding: 40px 20px;
+
+    @include break(tablet) {
+      padding: 60px 40px;
+    }
+
+    h2 {
+      @include font("heading-regular");
+      text-align: center;
+    }
+  }
+}
