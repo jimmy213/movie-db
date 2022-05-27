@@ -33,6 +33,24 @@ Finally, we can start the local development environment by running:
 
 `yarn start`
 
-## Power by
+## How it works
+
+### Home page
+
+There is a search box at the top where you can search for a movie. The submit query is passed via the press of the Enter keyboard button. After that, you should see the results down below (unless there aren't any).
+
+By clicking on a movie, a modal is opened with a bit more information about the movie and a button (heart) to add/remove it from your favorites list. This modal should close either by pressing the close button, or by clicking outside of it.
+
+Down the page, you will find a Top 10 list as fetched by the API and a Top 10 Favorites list (in order of addition).
+
+### Movies page
+
+In this page, you will find a list of movies (20 per page) with some sort filters at the top. By clicking a movie, the modal discussed above will open.
+
+### Favorites page
+
+Here you will find the movies that you marked as favorite. This list is saved locally as JSON data.
+
+## Powered by
 
 <img src="https://www.themoviedb.org/assets/2/v4/logos/v2/blue_square_2-d537fb228cf3ded904ef09b136fe3fec72548ebc1fea3fbbd1ad9e36364db38b.svg" alt="the movie database" width="100"/>
