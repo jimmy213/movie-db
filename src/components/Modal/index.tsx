@@ -1,5 +1,6 @@
 import { FC } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { setCurrentMovieId } from "../../globalSlice";
 import { close as _close } from "./modalSlice";
 
 interface ModalProps {
@@ -19,6 +20,7 @@ export const Modal: FC<ModalProps> = ({ modalName, children }) => {
 
   const close = () => {
     dispatch(_close(modalName));
+    dispatch(setCurrentMovieId(null));
   };
 
   return (

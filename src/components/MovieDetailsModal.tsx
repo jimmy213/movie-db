@@ -1,6 +1,7 @@
 import { useSelector } from "react-redux";
 import Modal, { ModalBody, ModalFooter, ModalHeader } from "./Modal";
 import { useFetch } from "../utils/useFetch";
+import { useFavorite } from "../utils/useFavorite";
 
 const API_KEY = process.env.REACT_APP_TMDB_API_KEY;
 
@@ -11,6 +12,8 @@ export const MovieDetailsModal = () => {
     `https://api.themoviedb.org/3/movie/${currentMovieId}?api_key=${API_KEY}`
   );
 
+  const { isFavorite, handleFavorite } = useFavorite();
+
   return (
     <>
       <Modal modalName="movie-details">
@@ -18,6 +21,13 @@ export const MovieDetailsModal = () => {
 
         {!isPending && data && (
           <>
+            <button
+              className={isFavorite ? "movie-fav-true" : "movie-fav-false"}
+              onClick={handleFavorite}
+            >
+              &#9829;
+            </button>
+
             <ModalHeader>
               <h2 className="modal-header-title">{data.title}</h2>
             </ModalHeader>

@@ -40,4 +40,13 @@
     @include font("baseline");
     display: block;
   }
+
+  &.simple {
+    padding: 10px 20px;
+    min-height: auto;
+
+    h3 {
+      @include font("baseline");
+    }
+  }
 }
