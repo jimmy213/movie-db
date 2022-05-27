@@ -1,46 +1,38 @@
-# Getting Started with Create React App
+# Movie DB Search
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Overview
 
-## Available Scripts
+A React based web app that displays movie information and allow users to search and add them to their favorites.
 
-In the project directory, you can run:
+For the fetched movie information, I used the [TMDb API](https://www.themoviedb.org/).
 
-### `yarn start`
+## How to run
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Install the required node packages by running the following in the project's directory.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+`yarn install`
 
-### `yarn test`
+For the application to work as intended and start fetching data, you need an [API key](https://www.themoviedb.org/documentation/api). You should create a `.env.local` file in the project's root directory and add your key as following:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```
+REACT_APP_TMDB_API_KEY=YOUR_API_KEY
+```
 
-### `yarn build`
+For the favorites functionality to work, you need to be running:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+`npx json-server --watch data/db.json --port 4000`
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+and add the corresponding url to the `.env.local` file that we created.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```
+REACT_APP_TMDB_API_KEY=a066e9bd01a7c0cf2ddd9ecf589e8a13
+REACT_APP_LOCAL_SERVER_IP=http://localhost:4000/favorites
+```
 
-### `yarn eject`
+Finally, we can start the local development environment by running:
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+`yarn start`
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Power by
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+<img src="https://www.themoviedb.org/assets/2/v4/logos/v2/blue_square_2-d537fb228cf3ded904ef09b136fe3fec72548ebc1fea3fbbd1ad9e36364db38b.svg" alt="the movie database" width="100"/>
